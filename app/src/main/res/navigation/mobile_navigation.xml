@@ -3,23 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_coinmarket">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.josala.cryptopulse.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_coinmarket"
+        android:name="com.josala.CryptoListFragment"
+        android:label="@string/crypto_list_title"
+        tools:layout="@layout/fragment_crypto_list" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.josala.cryptopulse.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.josala.cryptopulse.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_defi"
+        android:name="com.josala.DefiListFragment"
+        android:label="@string/defi_title"
+        tools:layout="@layout/fragment_defi" />
 </navigation>

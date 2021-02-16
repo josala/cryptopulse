@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="crypto_list_title">Coinmarketcap</string>
     <string name="coin_list_error">Error fetching data</string>
 </resources>
