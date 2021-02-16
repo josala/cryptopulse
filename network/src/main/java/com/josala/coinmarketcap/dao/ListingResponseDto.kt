@@ -1,4 +1,6 @@
-package com.josala.data.remote.coinmarketcap.dao
+package com.josala.coinmarketcap.dao
+
+import com.josala.data.remote.coinmarketcap.dao.MetadataDto
 
 data class CryptoItemDto(
     val id: Int,
