@@ -1,3 +1,3 @@
 include ':data'
-include ':app'
+include ':app', ':features:coinmarketcap', ':features:defi'
 rootProject.name = "cryptopulse"
