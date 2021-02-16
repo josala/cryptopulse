@@ -1,4 +1,4 @@
-package com.josala.data.remote.coinmarketcap
+package com.josala.coinmarketcap
 
 import com.josala.data.remote.coinmarketcap.dao.ListingResponseDto
 import retrofit2.Response
