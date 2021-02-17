@@ -30,12 +30,8 @@ class CryptoListViewModel(
                 is ServiceResult.Success -> {
                     loadingState.value = LoadingState.LOADED
                     cryptoList.postValue(listResult.data)
-                    println("AAZZ list: ${listResult.data}")
                 }
-                is ServiceResult.Error -> {
-                    loadingState.value = LoadingState.ERROR
-                    println("AAZZ error: ${listResult.error.msg}")
-                }
+                is ServiceResult.Error -> loadingState.value = LoadingState.ERROR
             }
         }
     }
