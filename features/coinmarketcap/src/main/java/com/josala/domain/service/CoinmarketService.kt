@@ -10,11 +10,11 @@ interface CoinmarketService {
     suspend fun getCryptoItems(): ServiceResult<List<CryptoItem>>
 }
 
-class CoinmarketServiceImpl(private val coinmarketApi: CoinmarketApi) : BaseService(),
+class CoinmarketServiceImpl(private val coinmarketApi: CoinmarketApi) : BaseCoinmarketService(),
     CoinmarketService {
 
     override suspend fun getCryptoItems(): ServiceResult<List<CryptoItem>> {
-        return when (val result = getResult { coinmarketApi.getCryptoListing() }) {
+        return when (val result = getResult { coinmarketApi.getLatestCryptoListing(apiKey) }) {
             is ServiceResult.Success -> {
                 val cryptoList = result.data.data.map { CryptoItem(it) }
                 ServiceResult.Success(cryptoList)

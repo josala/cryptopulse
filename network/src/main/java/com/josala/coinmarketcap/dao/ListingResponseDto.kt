@@ -1,15 +1,24 @@
 package com.josala.coinmarketcap.dao
 
-import com.josala.data.remote.coinmarketcap.dao.MetadataDto
-
 data class CryptoItemDto(
     val id: Int,
     val name: String,
     val symbol: String,
-    val website_slug: String
+    val max_supply: Long?,
+    val quote: QuoteDto
+)
+
+data class QuoteDto(
+    val USD: UsdPriceDto
+)
+
+data class UsdPriceDto(
+    val price: Float,
+    val percent_change_24h: Float,
+    val market_cap: Float
 )
 
 data class ListingResponseDto(
     val data: List<CryptoItemDto>,
-    val metadata: MetadataDto
+    val status: StatusDto
 )

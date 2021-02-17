@@ -47,6 +47,8 @@ class CryptoItemViewHolder(private val cryptoItemView: View) :
         with(cryptoItemView) {
             findViewById<TextView>(R.id.crypto_item_name)?.text = cryptoItem.name
             findViewById<TextView>(R.id.crypto_item_symbol)?.text = cryptoItem.symbol
+            findViewById<TextView>(R.id.max_supply)?.text = "Max supply: ${cryptoItem.supply}"
+            findViewById<TextView>(R.id.price)?.text = "${cryptoItem.price} USD"
             this.setOnClickListener {
                 cryptoItemClickListener.onCryptoItemClick(cryptoItem.id)
             }
