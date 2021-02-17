@@ -16,5 +16,5 @@ class CoinmarketClient(baseUrl: String) : CoinmarketApi {
         start: Int,
         limit: Int,
         convert: String
-    ) = coinmarketClient.getLatestCryptoListing(apiKey)
+    ) = coinmarketClient.getLatestCryptoListing()
 }

@@ -14,7 +14,8 @@ abstract class BaseService {
                 }
                 return ServiceResult.Error(NetworkError("Null body error"))
             } else {
-                return ServiceResult.Error(NetworkError(response.message(), response.code()))
+                val msg = response.errorBody()?.string() ?: "Network error"
+                return ServiceResult.Error(NetworkError(msg, response.code()))
             }
         } catch (e: Exception) {
             return ServiceResult.Error(NetworkError(e.localizedMessage))
