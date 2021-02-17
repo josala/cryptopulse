@@ -1,6 +1,7 @@
 package com.josala.cryptopulse
 
 import android.app.Application
+import com.josala.cryptopulse.di.dispatcherModule
 import com.josala.di.coinmarketApiModule
 import com.josala.di.coinmarketModule
 import org.koin.android.ext.koin.androidContext
@@ -14,7 +15,8 @@ class CryptopulseApp: Application() {
             androidContext(this@CryptopulseApp)
             modules(listOf(
                 coinmarketApiModule,
-                coinmarketModule
+                coinmarketModule,
+                dispatcherModule
             ))
         }
     }
