@@ -11,10 +11,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.josala.core.Router
+import com.josala.core.model.Crypto
+import com.josala.domain.model.CryptoItem
 import com.josala.features.coinmarketcap.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class CryptoListFragment: Fragment(), CryptoItemClickListener {
+class CryptoListFragment : Fragment(), CryptoItemClickListener {
 
     private val cryptoListViewModel by viewModel<CryptoListViewModel>()
     private val cryptoListAdapter = CryptoListAdapter(this)
@@ -42,7 +45,7 @@ class CryptoListFragment: Fragment(), CryptoItemClickListener {
         })
         cryptoListViewModel.loadingState().observe(viewLifecycleOwner, {
             view.findViewById<ProgressBar>(R.id.list_loader)?.let { progressBar ->
-                when(it) {
+                when (it) {
                     CryptoListViewModel.LoadingState.IN_PROGRESS -> progressBar.visibility = VISIBLE
                     CryptoListViewModel.LoadingState.LOADED -> progressBar.visibility = GONE
                     CryptoListViewModel.LoadingState.ERROR -> {
@@ -54,7 +57,10 @@ class CryptoListFragment: Fragment(), CryptoItemClickListener {
         })
     }
 
-    override fun onCryptoItemClick(id: Int) {
-        TODO("Not yet implemented")
+    override fun onCryptoItemClick(cryptoItem: CryptoItem) {
+        val router = activity as Router
+        with(cryptoItem) {
+            router.navigateToCryptoDetail(Crypto(id, name, price))
+        }
     }
 }

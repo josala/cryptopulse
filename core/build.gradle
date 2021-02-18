@@ -34,31 +34,11 @@ android {
 
 dependencies {
 
-    implementation project(":network")
-    implementation project(":core")
-    //di
-    implementation "org.koin:koin-android:$koin_version"
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
-    implementation "org.koin:koin-androidx-fragment:$koin_version"
-    //constraint layout
-    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
-    //navigation
-    implementation "androidx.navigation:navigation-fragment:$nav_version"
-    implementation "androidx.navigation:navigation-ui:$nav_version"
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    //api
-    implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     testImplementation 'junit:junit:4.+'
-    testImplementation 'org.mockito:mockito-core:3.3.3'
-    testImplementation 'androidx.arch.core:core-testing:2.0.0'
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_android_version"
-    testImplementation "org.assertj:assertj-core:3.11.1"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

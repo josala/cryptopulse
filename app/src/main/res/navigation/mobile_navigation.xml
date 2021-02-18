@@ -9,11 +9,19 @@
         android:id="@+id/navigation_coinmarket"
         android:name="com.josala.CryptoListFragment"
         android:label="@string/crypto_list_title"
-        tools:layout="@layout/fragment_crypto_list" />
+        tools:layout="@layout/fragment_crypto_list">
+        <action
+            android:id="@+id/action_navigation_main_to_cryptoItemFragment"
+            app:destination="@id/cryptoItemFragment"></action>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_defi"
         android:name="com.josala.DefiListFragment"
         android:label="@string/defi_title"
         tools:layout="@layout/fragment_defi" />
+    <fragment
+        android:id="@+id/cryptoItemFragment"
+        android:name="com.josala.CryptoItemFragment"
+        android:label="CryptoItemFragment" />
 </navigation>

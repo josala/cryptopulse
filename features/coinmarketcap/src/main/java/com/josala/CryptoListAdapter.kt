@@ -9,7 +9,7 @@ import com.josala.domain.model.CryptoItem
 import com.josala.features.coinmarketcap.R
 
 interface CryptoItemClickListener {
-    fun onCryptoItemClick(id: Int)
+    fun onCryptoItemClick(cryptoItem: CryptoItem)
 }
 
 class CryptoListAdapter(private val cryptoItemClickListener: CryptoItemClickListener) :
@@ -50,7 +50,7 @@ class CryptoItemViewHolder(private val cryptoItemView: View) :
             findViewById<TextView>(R.id.max_supply)?.text = "Max supply: ${cryptoItem.supply}"
             findViewById<TextView>(R.id.price)?.text = "${cryptoItem.price} USD"
             this.setOnClickListener {
-                cryptoItemClickListener.onCryptoItemClick(cryptoItem.id)
+                cryptoItemClickListener.onCryptoItemClick(cryptoItem)
             }
         }
     }
