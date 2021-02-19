@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -38,6 +39,8 @@ dependencies {
     implementation project(':features:defi')
     implementation project(':network')
     implementation project(':core')
+    implementation project(':database')
+
     //di
     implementation "org.koin:koin-android:$koin_version"
 
