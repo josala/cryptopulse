@@ -1,3 +1,4 @@
+include ':database'
 include ':core'
 include ':network'
 include ':app', ':features:coinmarketcap', ':features:defi'
