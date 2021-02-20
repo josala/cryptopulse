@@ -17,9 +17,9 @@ class CryptopulseApp : Application() {
             modules(
                 listOf(
                     coinmarketApiModule,
+                    databaseModule,
                     coinmarketModule,
-                    dispatcherModule,
-                    databaseModule
+                    dispatcherModule
                 )
             )
         }

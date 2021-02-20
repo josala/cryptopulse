@@ -2,4 +2,6 @@
 <resources>
     <string name="crypto_list_title">Coinmarketcap</string>
     <string name="coin_list_error">Error fetching data</string>
+    <string name="coin_saved">Crypto saved</string>
+    <string name="coin_save_error">Error saving crypto</string>
 </resources>

@@ -36,6 +36,8 @@ dependencies {
 
     implementation project(":network")
     implementation project(":core")
+    implementation project(":database")
+
     //di
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"

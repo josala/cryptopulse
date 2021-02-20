@@ -1,6 +1,7 @@
 package com.josala.database.di
 
 import androidx.room.Room
+import com.josala.database.CryptoRepository
 import com.josala.database.CryptoRepositoryImpl
 import com.josala.database.CryptopulseDatabase
 import com.josala.database.DATABASE_NAME
@@ -16,5 +17,5 @@ val databaseModule = module {
             DATABASE_NAME
         ).build()
     }
-    single { CryptoRepositoryImpl(get()) }
+    single { CryptoRepositoryImpl(get()) as CryptoRepository }
 }
