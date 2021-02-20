@@ -9,7 +9,8 @@ import kotlinx.coroutines.*
 
 class CryptoItemViewModel(
     private val coinmarketcapRepository: CoinmarketcapRepository,
-    private val dispatcher: CoroutineDispatcher
+    private val dispatcher: CoroutineDispatcher,
+    private val dispatcherIo: CoroutineDispatcher
 ) : ViewModel() {
 
     private val job = Job()
@@ -18,7 +19,7 @@ class CryptoItemViewModel(
     fun saveState(): LiveData<SaveState> = saveState
 
     fun saveCrypto(crypto: Crypto) {
-        CoroutineScope(Dispatchers.IO).async {
+        CoroutineScope(dispatcherIo).async {
             val result = coinmarketcapRepository.saveCrypto(crypto)
             withContext(dispatcher) {
                 saveState.value = if (result) SaveState.SAVED else SaveState.ERROR

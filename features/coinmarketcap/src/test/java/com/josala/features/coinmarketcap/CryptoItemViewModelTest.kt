@@ -28,7 +28,7 @@ class CryptoItemViewModelTest {
     @Before
     fun setUp() {
         mockCoinmarketcapRepository = Mockito.mock(CoinmarketcapRepository::class.java)
-        cryptoItemViewModel = CryptoItemViewModel(mockCoinmarketcapRepository, testDispatcher)
+        cryptoItemViewModel = CryptoItemViewModel(mockCoinmarketcapRepository, testDispatcher, testDispatcher)
     }
 
     @Test
