@@ -5,6 +5,7 @@ import com.josala.cryptopulse.di.dispatcherModule
 import com.josala.database.di.databaseModule
 import com.josala.di.coinmarketApiModule
 import com.josala.di.coinmarketModule
+import com.josala.favorites.di.favoriteModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -19,6 +20,7 @@ class CryptopulseApp : Application() {
                     coinmarketApiModule,
                     databaseModule,
                     coinmarketModule,
+                    favoriteModule,
                     dispatcherModule
                 )
             )
