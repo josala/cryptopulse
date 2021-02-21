@@ -37,6 +37,7 @@ dependencies {
 
     implementation project(':features:coinmarketcap')
     implementation project(':features:defi')
+    implementation project(':features:favorites')
     implementation project(':network')
     implementation project(':core')
     implementation project(':database')

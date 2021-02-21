@@ -24,4 +24,8 @@
         android:id="@+id/cryptoItemFragment"
         android:name="com.josala.CryptoItemFragment"
         android:label="CryptoItemFragment" />
+    <fragment
+        android:id="@+id/navigation_fav"
+        android:name="com.josala.favorites.FavoritesFragment"
+        android:label="@string/fav_title" />
 </navigation>
